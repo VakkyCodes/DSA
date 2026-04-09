@@ -8,6 +8,7 @@ public class Hashmapnotes {
 
         for(char ch : str.toCharArray()) {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
+            
         }
 
         System.out.println("Frequency: " + map);
