@@ -10,6 +10,7 @@ public class stack {
         st.push(3);
         st.pop();
         st.peek();
+       
 
     }
 
@@ -145,5 +146,6 @@ public class stack {
     public static void main(String[] args) {
         basic();
         reverse();
+        
     }
 }
