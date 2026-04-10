@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class neew{
@@ -28,15 +29,24 @@ public class neew{
      } 
 }
 public static void opt(){
-  int arr[]={1,2,3,3,2};
+  int arr[]={0,0};
+  if(arr.length==2){
+  System.out.println("array is just of 2 element");
+  return;
+}
   HashMap<Integer,Integer>map=new HashMap<>();
   for(int i=0;i<arr.length;i++){
-    map.put(arr[i], map.getOrDefault(arr[i],1)+1);
+    map.put(arr[i], map.getOrDefault(arr[i],0)+1);
   }
-  for(int i=0;i<map.size();i++){
-    System.out.println("hi");
-  }
+  for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+    if (entry.getValue() % 2 != 0) {
+        System.out.println("this is the imposter " + entry.getKey());
+        
+    }
 }
+
+  }
+
     public static void main(String[]args){
       opt();
 
