@@ -65,6 +65,45 @@ public class arrray {
 
         return xor;
     }
+    public static void mixedSeriesNthTerm(int n) {
+    int fib1 = 1, fib2 = 1, fibNext = 1;
+    int primeCount = 0, num = 2;
+    int fibIndex = 1, primeIndex = 0;
+    int result = 0;
+
+    for (int i = 1; i <= n; i++) {
+        if (i % 2 != 0) { // Odd position: Fibonacci
+            if (fibIndex == 1 || fibIndex == 2) {
+                result = 1;
+            } else {
+                fibNext = fib1 + fib2;
+                fib1 = fib2;
+                fib2 = fibNext;
+                result = fibNext;
+            }
+            fibIndex++;
+        } else { // Even position: Prime
+            while (true) {
+                boolean isPrime = true;
+                for (int j = 2; j <= Math.sqrt(num); j++) {
+                    if (num % j == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    primeCount++;
+                    result = num;
+                    num++;
+                    break;
+                }
+                num++;
+            }
+            primeIndex++;
+        }
+    }
+    System.out.println(result);
+}
 
     // 🔹 MAIN METHOD
     public static void main(String[] args) {

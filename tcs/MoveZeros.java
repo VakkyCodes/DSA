@@ -1,6 +1,15 @@
+import java.util.Scanner;
+
 public class MoveZeros {
     public static void main(String[] args) {
-        int arr[] = {0, 1, 0, 3, 12};
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+
+
 
         int index = 0;
 
