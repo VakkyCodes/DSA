@@ -20,7 +20,7 @@ public class gym {
                 totalCost += cost[i];
             }
     }
-    if(n == 0) {
+   if(n == 0) {
             System.out.println(totalCost);
         } else {
             System.out.println("Error");
