@@ -19,7 +19,7 @@ public class gym {
                 n -= months[i];
                 totalCost += cost[i];
             }
-    }
+ }
    if(n == 0) {
             System.out.println(totalCost);
         } else {
