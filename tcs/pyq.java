@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class pyq{
+    public static void first(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the time in minutes");
+        int min=sc.nextInt();
+         System.out.println("enter the Distance ");
+         if(min >60 || min<=0){
+            System.out.println("error");
+            return;
+         }
+        int dist=sc.nextInt();
+        double hour=min/60.0;
+        
+        double speed=dist/hour;
+        System.out.println(speed);
+    }
+    
+    public static void second(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the number of array");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+   
+        int curr=0;
+        int start=0;
+        int end=0;
+        int s=0;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+           curr+=arr[i];
+           if(curr>max){
+            max=curr;
+            start=s;
+            end=i;
+           } 
+            if (curr < 0){
+                 curr = 0;
+                 s=i+1;
+        }}
+        System.out.print("Subarray: ");
+for (int i = start; i <= end; i++) {
+    System.out.print(arr[i] + " ");
+}
+System.out.println();
+        System.out.println(max);
+    }
+    
+   public static void third() {
+    int r = 2;
+    int c = 2;
+    int arr[][] = {{30, 40}, {50, 60}};
+    for (int i = 0; i < r; i++) {
+        int rowSum = 0; // Initialize sum for each row
+        for (int j = 0; j < c; j++) {
+            rowSum += arr[i][j];
+        }
+        System.out.println("Sum of row " + i + ": " + rowSum);
+    }
+}
+    public static void main(String[] args) {
+      third();
+    }
+}
