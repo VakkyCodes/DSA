@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class pyq{
@@ -62,7 +66,29 @@ System.out.println();
         System.out.println("Sum of row " + i + ": " + rowSum);
     }
 }
-    public static void main(String[] args) {
-      third();
+  public static void fifth(){
+    int arr[]={1,1,3,5,6,3,5};
+ Arrays.sort(arr);
+  HashSet<Integer>set=new HashSet<>();
+    for(int i=arr.length-1;i>0;i--){
+set.add(arr[i]);
+    }
+  
+  
+    
+  }
+public static void sixt() {
+    int arr[] = {1, 2, 3, 4, 1}; // You can change this to any test case
+    int minIndex = 0;
+    for (int i = 1; i < arr.length; i++) {
+        if (arr[i] < arr[minIndex]) {
+            minIndex = i;
+        }
+    }
+    System.out.println(minIndex); // This is the number of rotations
+}
+
+public static void main(String[] args) {
+      sixt();
     }
 }
