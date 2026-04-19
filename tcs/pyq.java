@@ -1,7 +1,9 @@
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 
 public class pyq {
@@ -122,8 +124,21 @@ public class pyq {
         System.out.println("max is "+arrp[index]);
 
     }
+public static void eight(){
+    int arr[]={1,2,4,1,5,2};
+    int maxFreq=0;
+    HashMap<Integer,Integer>Map=new HashMap<>();
+    for(int i=0;i<arr.length;i++){
+        Map.put(arr[i],Map.getOrDefault(arr[i], 0)+1);
 
+    }
+    for(Map.Entry<Integer,Integer>entry:Map.entrySet()){
+  
+    }
+}
+    
+    
     public static void main(String[] args) {
-        seventh();
+        eight();
     }
 }
