@@ -107,38 +107,91 @@ public class pyq {
                     visited[j] = 1;
                 }
             }
-            if (count > max ) {
+            if (count > max) {
+                max = count;
+                index = i;
+            } else if (count == max && arrp[i] < arrp[index]) {
                 max = count;
                 index = i;
             }
-            else if(count==max && arrp[i]<arrp[index]){
-                max=count;
-                index=i;
-            }
 
-            
             visited[i] = 1;
             System.out.println(count + " " + arrp[i]);
-            
+
         }
-        System.out.println("max is "+arrp[index]);
+        System.out.println("max is " + arrp[index]);
 
     }
-public static void eight(){
-    int arr[]={1,2,4,1,5,2};
-    int maxFreq=0;
-    HashMap<Integer,Integer>Map=new HashMap<>();
-    for(int i=0;i<arr.length;i++){
-        Map.put(arr[i],Map.getOrDefault(arr[i], 0)+1);
 
+    public static void eight(int[] arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        // Count frequencies
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        int maxFreq = 0;
+        int ans = Integer.MAX_VALUE;
+        // Find the element with highest frequency (smallest if tie)
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int key = entry.getKey();
+            int freq = entry.getValue();
+            if (freq > maxFreq || (freq == maxFreq && key < ans)) {
+                maxFreq = freq;
+                ans = key;
+            }
+        }
+        System.out.println(ans);
     }
-    for(Map.Entry<Integer,Integer>entry:Map.entrySet()){
-  
+
+    public static void ninth() {
+        int arr[] = { 5, 6, 7 };
+        int[][] mat = {
+                { 0, 1, 3 },
+                { 1, 0, 2 },
+                { 3, 2, 0 }
+        };
+        int max = 1000;
+        for (int i = 0; i < mat.length; i++) {
+            int sum = 0; // Loop over rows
+            for (int j = 0; j < mat[i].length; j++) {
+
+                if (i == j) {
+                    mat[i][j] = arr[i];
+                }
+                sum += mat[i][j];
+            }
+            if (sum < max) {
+                 max = sum;               
+            }
+        }
+        for (int i = 0; i < mat.length; i++) { // Loop over rows
+            for (int j = 0; j < mat[i].length; j++) { // Loop over columns
+                System.out.print(mat[i][j] + " ");
+            }
+            System.out.println(); // Move to next line after each row
+           
+        }
+         System.out.println("the min element is"+max);
     }
+public static void tesnth(){
+    double discount=0;
+    double amount=6000;
+    if(amount<1000){
+        discount=0.05*amount;
+        amount-=discount;
+    }
+     else if(amount >= 1000 && amount < 5000){
+        discount=0.1*amount;
+        amount-=discount;
+    }
+     else if(amount >= 5000){
+        discount=0.15*amount;
+        amount-=discount;
+    }
+    System.out.println(amount);
 }
-    
-    
     public static void main(String[] args) {
-        eight();
+        tesnth();
     }
 }
