@@ -7,7 +7,7 @@ public class Longest{
             while(sum==k){
                 max=Math.max(max,j-i+1);
                 sum-=arr[i];
-                i++;
+                i++; 
             }
 
         }
