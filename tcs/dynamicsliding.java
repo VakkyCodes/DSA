@@ -11,6 +11,7 @@ public class dynamicsliding {
             i++;
         }
        }
+       //how u doing after a long time
         System.out.println(min_length);
     }
 }
