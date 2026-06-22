@@ -1,4 +1,4 @@
-public class LL{
+=public class LL{
     class  node{
         node next;
         String data;
